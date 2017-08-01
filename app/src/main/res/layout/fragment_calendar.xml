@@ -1,0 +1,60 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.netix.lawyers.fragment.CalendarFragment">
+
+    <RelativeLayout
+        android:id="@+id/relativeWithProgressbar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.github.rahatarmanahmed.cpv.CircularProgressView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/progress_view"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:cpv_animAutostart="true"
+            app:cpv_indeterminate="true" />
+
+        <TextView
+            android:id="@+id/progressViewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progress_view"
+            android:paddingTop="6dp"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:text="טוען אירועים" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearWithCalendar"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2.5"
+            app:mcv_tileWidth="match_parent"
+            app:mcv_showOtherDates="all"
+            app:mcv_selectionColor="#00F"
+            />
+
+        <ListView
+            android:layout_weight="1.5"
+            android:id="@+id/eventsListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
